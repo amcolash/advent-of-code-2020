@@ -3,7 +3,7 @@ const path = require('path');
 const input = fs.readFileSync(path.join(__dirname, 'input.txt')).toString();
 
 const numbers = input.split('\n').map((n) => Number.parseInt(n));
-let found = [];
+const found = [];
 
 numbers.forEach((v1, i1) => {
   numbers.forEach((v2, i2) => {
