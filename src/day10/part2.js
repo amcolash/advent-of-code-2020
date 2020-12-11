@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const input = fs.readFileSync(path.join(__dirname, 'input2.txt')).toString().trim();
+const input = fs.readFileSync(path.join(__dirname, 'input.txt')).toString().trim();
 
 const numbers = input
   .split('\n')
@@ -28,12 +28,19 @@ for (let i = 0; i < numbers.length; i++) {
   lookup[Math.pow(2, i)] = i;
 }
 
+let avg = 0;
+for (let i = 0; i < numbers.length; i += 3) {
+  avg += numbers[i];
+}
+
 for (let i = 0; i < totalVariations; i++) {
   counter++;
   if (counter === 10000000) {
     counter = 0;
-    console.log((i / totalVariations) * 100, numValid, (Date.now() - time) / 1000);
+    console.log(i, (i / totalVariations) * 100, numValid, (Date.now() - time) / 1000);
   }
+
+  if (i < avg) continue;
 
   // Skip if the last value is not used
   if (!(i & (1 << (numbers.length - 1)))) continue;
