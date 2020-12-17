@@ -21,13 +21,13 @@ function speak(number) {
 
 input.split(',').forEach((n) => speak(Number.parseInt(n)));
 
-let counter = 0;
+let counter = turn;
 while (turn <= stopTurn) {
-  counter++;
-  if (counter > 100000) {
+  if (counter >= 100000) {
     console.log(turn, Object.keys(numbers).length);
     counter = 0;
   }
+  counter++;
 
   const lastNum = numbers[last];
   if (lastNum.first) {
