@@ -5,4 +5,4 @@ if [ "$#" -ne 2 ]; then
 fi
 
 
-nodemon src/day$1/part$2.js
+nodemon --watch src/day$1 src/day$1/part$2.js
