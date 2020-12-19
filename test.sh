@@ -2,6 +2,7 @@
 
 if [ "$#" -ne 2 ]; then
     echo "usage: test.sh [day] [part]"
+    exit 0
 fi
 
 
