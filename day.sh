@@ -2,6 +2,7 @@
 
 if [ "$#" -ne 1 ]; then
     echo "usage: day.sh [day number]"
+    exit 0
 fi
 
 mkdir src/day$1
